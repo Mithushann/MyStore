@@ -1,0 +1,20 @@
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #1b5491;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
+
+.custom-button:active {
+    background-color: #004099;
+}
