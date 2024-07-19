@@ -1,9 +1,30 @@
 .product-list {
     max-width: 100vw;
-    margin-top: 15vh;
+    margin-top: 8vh; /* Minimal distance from the top bar */
     padding: 0 20px; /* Optional padding to create space on the sides */
     overflow-x: hidden;
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
     gap: 1px; /* Adjust gap between cards */
+}
+
+/* Adjust for screens narrower than 1200px (typically tablets and small laptops) */
+@media (max-width: 1200px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+}
+
+/* Adjust for screens narrower than 900px (typically large phones and small tablets) */
+@media (max-width: 900px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+/* Adjust for screens narrower than 600px (typically small phones) */
+@media (max-width: 600px) {
+    .product-list {
+        grid-template-columns: repeat(1, 1fr); /* 1 column */
+    }
 }
