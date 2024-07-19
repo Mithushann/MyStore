@@ -1,4 +1,91 @@
 .topbar {
+    display: flex;
+    justify-content: space-between;
+    max-height: 10vh;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.topbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 5vh;
+}
+
+.topbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-menu a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.topbar-menu a.active {
+    font-weight: bold;
+}
+
+.cart-badge {
+    background-color: red;
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-left: 5px;
+}
+
+.topbar-menu-button {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .topbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .topbar-menu.open {
+        display: flex;
+        position: absolute;
+        top: 60px;
+        left: 58%;
+        width: 30%;
+        background-color: #333;
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+
+    .topbar-menu a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #444;
+    }
+
+    .topbar-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .topbar-menu-button {
+        display: block;
+    }
+}
+
+/* .topbar {
     position: fixed;
     z-index: 1;
     top: 0;
@@ -63,4 +150,4 @@
     border-radius: 50%;
     font-size: small;
    
-}
+} */

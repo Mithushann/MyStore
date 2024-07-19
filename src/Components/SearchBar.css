@@ -1,10 +1,10 @@
 .custom-text-input {
     width: 40%;
-    height: 5%;
+    height: 2.1vh;
     padding: 10px;
     background-color: #f1f0f0;
     border-radius: 15px;
-    padding: 20px;
+    padding: 9px;
     display: flex;
     align-items: center;
     justify-content: center;
