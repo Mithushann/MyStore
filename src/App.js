@@ -36,8 +36,8 @@ const App = () =>  {
     return (
         <Router>
             <Auth0Provider
-                domain="dev-3dgis3nr.us.auth0.com"
-                clientId="0WfbR4Atwn696qAcxOeSdEqVv60gOlXK"
+                domain = {process.env.REACT_APP_AUTH_DOMAINN}
+                clientId= {process.env.REACT_APP_AUTH_CLIENT_ID}
                 authorizationParams={{
                         redirect_uri: window.location.origin
                 }}

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Cart.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import CustomButton from './CustomButton';
+import { doc, setDoc } from 'firebase/firestore';
+import database from "../firebase";
 
 const Cart = ({ cartList }) => {
     const { isAuthenticated, user } = useAuth0();
@@ -32,9 +34,19 @@ const Cart = ({ cartList }) => {
         );
     };
 
-    const sendCartList = () => {
-        console.log(localCartList);
-    }
+    const sendCartList = async () => {
+        if (isAuthenticated) {
+            try {
+                const cartRef = doc(database, `users/${user.name}`);
+                await setDoc(cartRef, { cartList: localCartList });
+                console.log("Cart list successfully sent to Firestore");
+            } catch (error) {
+                console.error("Error sending cart list: ", error);
+            }
+
+            setLocalCartList([]);
+        }
+    };
 
     return (
         <div className="cart-container">
@@ -59,7 +71,7 @@ const Cart = ({ cartList }) => {
                     ))}
                     <div>
                         {isAuthenticated ? (
-                            <CustomButton onClick={() => sendCartList()}>
+                            <CustomButton onClick={sendCartList}>
                                 Send Cart List
                             </CustomButton>
                         ) : (
