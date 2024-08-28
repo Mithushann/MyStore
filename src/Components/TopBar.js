@@ -10,24 +10,6 @@ const TopBar = ({ searchValue, onSearchChange, cartCount }) => {
   const { isAuthenticated, user } = useAuth0();
   const [message, setMessage] = useState("");
 
-//   useEffect(() => {
-//     if (isAuthenticated && user) {
-//       const storeUserData = async () => {
-//         try {
-//           const userData = {
-//             name: user.nickname,
-//             email: user.name,
-//             picture: user.picture,
-//           };
-//           await setDoc(doc(db, 'users', user.sub), userData);
-//         } catch (e) {
-//           console.error('Error adding document: ', e);
-//         }
-//       };
-//       storeUserData();
-//    }
-//   }, [isAuthenticated, user]);
-
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
   };
