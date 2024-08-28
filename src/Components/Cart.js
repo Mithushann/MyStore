@@ -43,6 +43,7 @@ const Cart = ({ cartList }) => {
             } catch (error) {
                 console.error("Error sending cart list: ", error);
             }
+            alert("Your order successfully sent to store");
 
             setLocalCartList([]);
         }
