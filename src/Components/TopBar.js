@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './TopBar.css';
 import SearchBar from './SearchBar';
@@ -7,8 +7,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 const TopBar = ({ searchValue, onSearchChange, cartCount }) => {
   const [activeMenu, setActiveMenu] = useState('home');
-  const { isAuthenticated, user } = useAuth0();
-  const [message, setMessage] = useState("");
+  const { isAuthenticated } = useAuth0();
 
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
@@ -32,7 +31,7 @@ const TopBar = ({ searchValue, onSearchChange, cartCount }) => {
           className={activeMenu === 'home' ? 'active' : ''}
           onClick={() => handleMenuClick('home')}
         >
-          Homeee123
+          Home
         </Link>
         <Link
           to="/cart"
