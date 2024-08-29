@@ -31,7 +31,7 @@ const TopBar = ({ searchValue, onSearchChange, cartCount }) => {
           className={activeMenu === 'home' ? 'active' : ''}
           onClick={() => handleMenuClick('home')}
         >
-          Home
+          Home1
         </Link>
         <Link
           to="/cart"
