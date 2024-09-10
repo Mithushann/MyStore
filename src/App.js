@@ -29,8 +29,6 @@ const App = () =>  {
                 return [...prevCartList, { ...product, count: 1 }];
             }
         });
-
-        
     };
 
     return (
