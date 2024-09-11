@@ -4,6 +4,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import TopBar from './Components/TopBar';
 import Home from './Home';
 import Cart from './Components/Cart';
+import Contact from './Components/Contact';
 import './App.css';
 
 const App = () =>  {
@@ -46,6 +47,7 @@ const App = () =>  {
                         <Route path="/" element={<Home searchValue={searchValue} onChange={handleAddToCart}/>} />
                         <Route path="/home" element={<Home searchValue={searchValue} onChange={handleAddToCart} />} />
                         <Route path="/cart" element={<Cart cartList={cartList}/>} />
+                        <Route path="contact" element={<Contact />} />
                     </Routes>
             </div>
             </Auth0Provider>
