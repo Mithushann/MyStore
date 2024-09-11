@@ -39,7 +39,7 @@ const TopBar = ({ searchValue, onSearchChange, cartCount }) => {
           onClick={() => handleMenuClick('cart')}
         >
           {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-          Cart
+          Carttt
         </Link>
         <Link
           to="/contact"
