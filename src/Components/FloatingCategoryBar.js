@@ -27,7 +27,6 @@ const FloatingCategoryBar = ({ setProductsFun }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [tooltipPosition, setTooltipPosition] = useState({ left: 0, top: 0 });
     const [hoveredCategory, setHoveredCategory] = useState('');
-    const [attachTo, setAttachTo] = useState('right'); // Default to 'right'
     const menuRef = useRef(null);
 
     const navigateToCategory = (category) => {
@@ -44,7 +43,7 @@ const FloatingCategoryBar = ({ setProductsFun }) => {
         >
             <div
                 ref={menuRef}
-                className={`floating-menu ${isExpanded ? 'expanded' : 'collapsed'} ${attachTo}`}
+                className={`floating-menu ${isExpanded ? 'expanded' : 'collapsed'}`}
             >
                 <button className="toggle-button" onClick={toggleExpand}>
                     {isExpanded ? <FaChevronDown /> : <FaChevronUp />}
