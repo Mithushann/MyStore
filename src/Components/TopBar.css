@@ -1,4 +1,7 @@
 .topbar {
+    position: fixed;
+    top: 0;  /* Fix the top bar to the top of the page */
+    width: 98%;
     display: flex;
     justify-content: space-between;
     max-height: 10vh;
@@ -6,6 +9,7 @@
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
+    z-index: 10000;
 }
 
 .topbar-logo {
@@ -43,7 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 45%;
+    border-radius: 40%;
     font-weight: bold;
 }
 

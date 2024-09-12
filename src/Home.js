@@ -42,7 +42,7 @@ const Home = ({searchValue, onChange}) => {
             case "Personal care":
                 setProducts(personalcare);
                 break;
-            case "Cleaningsupplies":
+            case "Cleaning supplies":
                 setProducts(cleaningsupplies);
                 break;
             case "Kitchen gadgets":

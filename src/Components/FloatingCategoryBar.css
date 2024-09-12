@@ -1,7 +1,6 @@
 .floating-menu {
     position: fixed;
     bottom: 0px;
-    right: 0px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -10,7 +9,7 @@
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: height 0.3s ease;
+    transition: height 0.3s ease, right 0.3s ease, left 0.3s ease;
 }
 
 .floating-menu.collapsed {
@@ -20,6 +19,16 @@
 
 .floating-menu.expanded {
     height: auto;
+}
+
+.floating-menu.right {
+    right: 0px;
+    left: auto;
+}
+
+.floating-menu.left {
+    right: auto;
+    left: 0px;
 }
 
 .category-wrapper {
@@ -54,7 +63,7 @@
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     white-space: nowrap;
     z-index: 1000;
