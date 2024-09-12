@@ -5,7 +5,7 @@ import CustomButton from './CustomButton';
 import { doc, setDoc } from 'firebase/firestore';
 import database from "../firebase";
 
-const Cart = ({ cartList }) => {
+const Cart = ({ cartList, setCartCount }) => {
     const { isAuthenticated, user } = useAuth0();
 
     const [localCartList, setLocalCartList] = useState(cartList);
@@ -46,6 +46,7 @@ const Cart = ({ cartList }) => {
             alert("Your order successfully sent to store");
 
             setLocalCartList([]);
+            setCartCount(0);
         }
     };
 

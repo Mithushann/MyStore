@@ -1,5 +1,5 @@
 .contact-page {
-    padding: 20px;
+    padding: 50px;
     max-width: 800px;
     margin: auto;
   }
@@ -10,6 +10,7 @@
   
   .stores-list {
     margin-top: 20px;
+    margin-bottom: 100px;
   }
   
   .store {

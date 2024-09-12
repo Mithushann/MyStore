@@ -45,8 +45,8 @@ const App = () =>  {
                 <TopBar searchValue={searchValue} onSearchChange={handleSearchChange} cartCount={cartCount}/>
                     <Routes>
                         <Route path="/" element={<Home searchValue={searchValue} onChange={handleAddToCart}/>} />
-                        <Route path="/home" element={<Home searchValue={searchValue} onChange={handleAddToCart} />} />
-                        <Route path="/cart" element={<Cart cartList={cartList}/>} />
+                        <Route path="home" element={<Home searchValue={searchValue} onChange={handleAddToCart} />} />
+                        <Route path="cart" element={<Cart cartList={cartList}setCartCount={setCartCount} /> } />
                         <Route path="contact" element={<Contact />} />
                     </Routes>
             </div>
