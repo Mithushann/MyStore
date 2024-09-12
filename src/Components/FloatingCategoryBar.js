@@ -40,7 +40,7 @@ const FloatingCategoryBar = ({ setProductsFun }) => {
     const handleMouseMove = (e) => {
         setTooltipPosition({
             left: e.clientX,
-            top: e.clientY + 20 // Adjust this value to offset the tooltip below the cursor
+            top: e.clientY + 20
         });
     };
 
