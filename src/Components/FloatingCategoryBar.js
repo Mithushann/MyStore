@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Draggable from 'react-draggable'; // Import the library
 import { FaAppleAlt, FaEgg, FaFish, FaBeer, FaBreadSlice, FaBath, FaTh, FaTools, FaTv, FaSprayCan, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './FloatingCategoryBar.css';
@@ -25,8 +25,8 @@ const icons = {
 
 const FloatingCategoryBar = ({ setProductsFun }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const [tooltipPosition, setTooltipPosition] = useState({ left: 0, top: 0 });
     const [hoveredCategory, setHoveredCategory] = useState('');
+    const [tooltipPosition, setTooltipPosition] = useState({ left: 0, top: 0 });
     const menuRef = useRef(null);
 
     const navigateToCategory = (category) => {
@@ -35,6 +35,13 @@ const FloatingCategoryBar = ({ setProductsFun }) => {
 
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
+    };
+
+    const handleMouseMove = (e) => {
+        setTooltipPosition({
+            left: e.clientX,
+            top: e.clientY + 20 // Adjust this value to offset the tooltip below the cursor
+        });
     };
 
     return (
@@ -53,6 +60,7 @@ const FloatingCategoryBar = ({ setProductsFun }) => {
                         <button
                             className="category-button"
                             onClick={() => navigateToCategory(category)}
+                            onMouseMove={handleMouseMove}
                             onMouseEnter={() => setHoveredCategory(category)}
                             onMouseLeave={() => setHoveredCategory('')}
                         >
